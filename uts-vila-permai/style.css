@@ -1,0 +1,654 @@
+/* Pengaturan dasar dan warna */
+:root {
+  --green: #245b4a;
+  --green-dark: #173e33;
+  --mint: #eaf3ed;
+  --cream: #faf8f2;
+  --ink: #24332d;
+  --muted: #68766f;
+  --line: #dce5de;
+  --white: #ffffff;
+  --shadow: 0 14px 35px rgba(28, 58, 45, 0.09);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, select {
+  font: inherit;
+}
+
+.container {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--line);
+}
+
+.header-content {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  color: var(--green-dark);
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: -0.06em;
+}
+
+.brand span {
+  color: #b47b42;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.main-nav a:hover {
+  color: var(--green);
+}
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 48px;
+  padding: 0 22px;
+  border: 1px solid var(--green);
+  border-radius: 9px;
+  background: var(--green);
+  color: var(--white);
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover {
+  background: var(--green-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(36, 91, 74, 0.18);
+}
+
+.button-small {
+  min-height: 40px;
+  padding: 0 16px;
+  font-size: 0.88rem;
+}
+
+.button-outline {
+  background: transparent;
+  color: var(--green);
+}
+
+.button-outline:hover {
+  color: var(--white);
+}
+
+.hero {
+  overflow: hidden;
+  background: linear-gradient(115deg, #edf4ed 0%, #f8f4e9 100%);
+}
+
+.hero-content {
+  min-height: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+  padding-top: 65px;
+  padding-bottom: 65px;
+}
+
+.hero-copy {
+  max-width: 650px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #a16c38;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+h1, h2, h3, h4, p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 650px;
+  margin-bottom: 18px;
+  color: var(--green-dark);
+  font-size: clamp(2.5rem, 5vw, 4.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.055em;
+}
+
+h1 span {
+  color: #a16c38;
+}
+
+.hero-copy > p:not(.eyebrow) {
+  max-width: 540px;
+  margin-bottom: 28px;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.hero-note {
+  width: 260px;
+  padding: 25px;
+  border: 1px solid rgba(36, 91, 74, 0.12);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: var(--shadow);
+}
+
+.note-icon {
+  display: block;
+  margin-bottom: 15px;
+  color: #b47b42;
+  font-size: 2rem;
+}
+
+.hero-note strong, .hero-note span:last-child {
+  display: block;
+}
+
+.hero-note span:last-child {
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.section {
+  padding-top: 78px;
+  padding-bottom: 78px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+h2 {
+  margin-bottom: 0;
+  color: var(--green-dark);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+
+.search-label {
+  display: grid;
+  gap: 7px;
+  min-width: 270px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+input, select {
+  width: 100%;
+  min-height: 46px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  outline: none;
+  background: var(--white);
+  color: var(--ink);
+}
+
+input:focus, select:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(36, 91, 74, 0.1);
+}
+
+.villa-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.villa-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: var(--white);
+  box-shadow: 0 8px 25px rgba(28, 58, 45, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.villa-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+}
+
+.villa-art {
+  min-height: 150px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #dce9dc, #f2e7d5);
+  color: var(--green);
+  font-size: 3.2rem;
+}
+
+.villa-card:nth-child(2) .villa-art {
+  background: linear-gradient(135deg, #dce9ed, #e8e0d4);
+}
+
+.villa-card:nth-child(3) .villa-art {
+  background: linear-gradient(135deg, #e8e2d3, #d8e8df);
+}
+
+.villa-details {
+  padding: 20px;
+}
+
+.villa-type {
+  margin-bottom: 6px;
+  color: #a16c38;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.villa-details h3 {
+  margin-bottom: 5px;
+  color: var(--green-dark);
+  font-size: 1.25rem;
+}
+
+.villa-location, .villa-facilities {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.villa-facilities {
+  min-height: 48px;
+  margin: 12px 0;
+}
+
+.villa-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.villa-price strong {
+  display: block;
+  color: var(--green);
+  font-size: 1.05rem;
+}
+
+.villa-price span, .availability {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.availability {
+  color: #28734f;
+  font-weight: 700;
+}
+
+.booking-section {
+  padding: 78px 0;
+  background: var(--cream);
+}
+
+.booking-layout {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  align-items: start;
+  gap: 55px;
+}
+
+.booking-intro h2 {
+  max-width: 420px;
+  margin-bottom: 18px;
+}
+
+.booking-intro > p:not(.eyebrow) {
+  color: var(--muted);
+}
+
+.booking-tip {
+  display: grid;
+  gap: 5px;
+  margin-top: 28px;
+  padding: 18px;
+  border-left: 4px solid #b47b42;
+  border-radius: 0 9px 9px 0;
+  background: #f0eadc;
+}
+
+.booking-tip span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.booking-form {
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.booking-form h3 {
+  margin-bottom: 22px;
+  color: var(--green-dark);
+  font-size: 1.35rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.form-group {
+  display: grid;
+  align-content: start;
+  gap: 7px;
+}
+
+.form-group label {
+  color: var(--ink);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.form-group small {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.form-actions .button {
+  flex: 1;
+}
+
+.form-message {
+  min-height: 24px;
+  margin: 14px 0 0;
+  color: #a23c32;
+  font-size: 0.88rem;
+}
+
+.form-message.success {
+  color: #28734f;
+}
+
+.price-summary {
+  margin-top: 12px;
+  padding: 18px;
+  border-radius: 10px;
+  background: var(--mint);
+}
+
+.price-summary h4 {
+  margin-bottom: 12px;
+  color: var(--green-dark);
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 7px 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.summary-row strong {
+  color: var(--ink);
+  text-align: right;
+}
+
+.total-row {
+  margin-top: 5px;
+  padding-top: 12px;
+  border-top: 1px solid #c8d9cd;
+  color: var(--green-dark);
+  font-weight: 800;
+}
+
+.total-row strong {
+  color: var(--green);
+  font-size: 1.1rem;
+}
+
+.orders-section {
+  padding-top: 65px;
+  padding-bottom: 65px;
+}
+
+.order-list {
+  display: grid;
+  gap: 12px;
+}
+
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 17px 20px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--white);
+}
+
+.order-item p {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.order-total {
+  color: var(--green);
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.empty-message {
+  color: var(--muted);
+}
+
+.site-footer {
+  padding-top: 42px;
+  background: var(--green-dark);
+  color: #e8f0ea;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding-bottom: 30px;
+}
+
+.footer-brand {
+  color: var(--white);
+}
+
+.footer-content p {
+  margin: 8px 0 0;
+  color: #bdcec3;
+  font-size: 0.9rem;
+}
+
+.contact-info {
+  display: grid;
+  gap: 5px;
+  color: #bdcec3;
+  font-size: 0.88rem;
+}
+
+.contact-info strong {
+  color: var(--white);
+}
+
+.copyright {
+  padding-top: 16px;
+  padding-bottom: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  color: #bdcec3;
+  font-size: 0.78rem;
+}
+
+/* Tablet: kartu dan form menjadi dua kolom */
+@media (max-width: 768px) {
+  .main-nav {
+    gap: 14px;
+  }
+
+  .hero-content {
+    min-height: auto;
+    gap: 25px;
+  }
+
+  .hero-note {
+    width: 220px;
+    flex-shrink: 0;
+  }
+
+  .villa-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .booking-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+/* Ponsel: elemen utama menjadi satu kolom */
+@media (max-width: 480px) {
+  .container {
+    width: min(100% - 28px, 1120px);
+  }
+
+  .header-content {
+    min-height: 66px;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .main-nav {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 0.82rem;
+  }
+
+  .button-small {
+    min-height: 36px;
+    padding: 0 11px;
+    font-size: 0.78rem;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    align-items: stretch;
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+
+  .hero-note {
+    width: 100%;
+  }
+
+  .section, .booking-section {
+    padding-top: 52px;
+    padding-bottom: 52px;
+  }
+
+  .section-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .search-label {
+    min-width: 0;
+  }
+
+  .villa-grid, .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .full-width {
+    grid-column: auto;
+  }
+
+  .booking-form {
+    padding: 19px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions .button {
+    width: 100%;
+  }
+
+  .footer-content, .order-item {
+    flex-direction: column;
+  }
+
+  .order-total {
+    white-space: normal;
+  }
+}

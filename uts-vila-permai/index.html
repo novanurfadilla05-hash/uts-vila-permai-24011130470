@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pilih dan pesan villa nyaman bersama Vila Permai.">
+  <title>Vila Permai | Pemesanan Villa</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-content">
+      <a class="brand" href="#" aria-label="Vila Permai beranda">Vila<span>Permai</span></a>
+      <nav class="main-nav" aria-label="Navigasi utama">
+        <a href="#beranda">Beranda</a>
+        <a href="#pilihan-villa">Pilihan Villa</a>
+        <a href="#pemesanan">Pemesanan</a>
+      </nav>
+      <a class="button button-small" href="#pemesanan">Pesan Sekarang</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="beranda">
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <p class="eyebrow">LIBURAN NYAMAN DIMULAI DI SINI</p>
+          <h1>Temukan tempat istirahat yang <span>lebih berkesan.</span></h1>
+          <p>Pilih villa favoritmu, tentukan tanggal menginap, dan rencanakan liburan bersama orang tersayang.</p>
+          <a class="button" href="#pilihan-villa">Jelajahi Villa</a>
+        </div>
+        <div class="hero-note">
+          <span class="note-icon">✦</span>
+          <strong>Waktu untuk rehat</strong>
+          <span>Udara segar, suasana tenang, dan pengalaman menyenangkan.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="pilihan-villa">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PILIHAN TERBAIK</p>
+          <h2>Villa pilihan untukmu</h2>
+        </div>
+        <label class="search-label" for="search-villa">Cari villa
+          <input id="search-villa" type="search" placeholder="Cari nama atau lokasi villa...">
+        </label>
+      </div>
+      <div class="villa-grid" id="villa-list" aria-live="polite"></div>
+      <p class="empty-message" id="empty-message" hidden>Villa tidak ditemukan. Coba kata kunci lain.</p>
+    </section>
+
+    <section class="booking-section" id="pemesanan">
+      <div class="container booking-layout">
+        <div class="booking-intro">
+          <p class="eyebrow">RESERVASI MUDAH</p>
+          <h2>Rencanakan pengalaman menginapmu.</h2>
+          <p>Isi data pemesanan dengan benar. Sistem akan menghitung estimasi biaya berdasarkan villa dan lama menginap.</p>
+          <div class="booking-tip">
+            <strong>Tips pemesanan</strong>
+            <span>Pastikan tanggal check-out setelah tanggal check-in dan jumlah tamu sesuai kapasitas villa.</span>
+          </div>
+        </div>
+
+        <form class="booking-form" id="booking-form" novalidate>
+          <h3>Formulir Pemesanan</h3>
+          <div class="form-grid">
+            <div class="form-group full-width">
+              <label for="guest-name">Nama tamu</label>
+              <input id="guest-name" name="guestName" type="text" placeholder="Masukkan nama lengkap" required>
+            </div>
+            <div class="form-group">
+              <label for="check-in">Tanggal check-in</label>
+              <input id="check-in" name="checkIn" type="date" required>
+            </div>
+            <div class="form-group">
+              <label for="check-out">Tanggal check-out</label>
+              <input id="check-out" name="checkOut" type="date" required>
+            </div>
+            <div class="form-group">
+              <label for="guest-count">Jumlah tamu</label>
+              <input id="guest-count" name="guestCount" type="number" min="1" max="10" value="2" required>
+              <small>Maksimal 10 tamu.</small>
+            </div>
+            <div class="form-group">
+              <label for="villa-select">Pilih villa</label>
+              <select id="villa-select" name="villa" required>
+                <option value="">Pilih villa</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button class="button button-outline" type="button" id="check-button">Cek Ketersediaan & Harga</button>
+            <button class="button" type="submit">Pesan Sekarang</button>
+          </div>
+          <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+          <section class="price-summary" id="price-summary" aria-live="polite" hidden>
+            <h4>Ringkasan Biaya</h4>
+            <div class="summary-row"><span>Villa</span><strong id="summary-villa">-</strong></div>
+            <div class="summary-row"><span>Lama menginap</span><strong id="summary-nights">-</strong></div>
+            <div class="summary-row"><span>Harga per malam</span><strong id="summary-rate">-</strong></div>
+            <div class="summary-row total-row"><span>Estimasi total</span><strong id="summary-total">-</strong></div>
+          </section>
+        </form>
+      </div>
+    </section>
+
+    <section class="section container orders-section" id="riwayat">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">CATATAN PEMESANAN</p>
+          <h2>Pesanan tersimpan</h2>
+        </div>
+      </div>
+      <div id="order-list" class="order-list">
+        <p class="empty-message">Belum ada pesanan yang tersimpan di perangkat ini.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <div>
+        <a class="brand footer-brand" href="#">Vila<span>Permai</span></a>
+        <p>Tempat nyaman untuk menciptakan cerita liburan.</p>
+      </div>
+      <div class="contact-info">
+        <strong>Informasi Kontak</strong>
+        <span>Email: vilapermai@example.com</span>
+        <span>Telepon: 0812-0000-0000</span>
+      </div>
+    </div>
+    <div class="container copyright">© 2026 Vila Permai. Dibuat untuk proyek pembelajaran Teknologi Web.</div>
+  </footer>
+</body>
+</html>
